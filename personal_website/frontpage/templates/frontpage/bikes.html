@@ -1,0 +1,15 @@
+{% extends "frontpage/base.html" %}
+{% block content %}
+    <h1>Bike Gallery</h1><br>
+    {% for bike in bikes %}
+        <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href={{ bike.bike_make_url }} target="_blank">{{ bike.bike_make }}</a>
+            </div>
+            <h2><a class="article-title" href="#">{{ bike.bike_model }}</a></h2>
+            <p class="article-content">{{ bike.content }}</p>
+        </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
