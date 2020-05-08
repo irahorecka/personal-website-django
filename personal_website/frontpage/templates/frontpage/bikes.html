@@ -5,10 +5,11 @@
         <article class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href={{ bike.bike_make_url }} target="_blank">{{ bike.bike_make }}</a>
+                <a class="mr-2" href="{{ bike.bike_make_url }}" target="_blank">{{ bike.bike_make }}</a>
             </div>
             <h2><a class="article-title" href="#">{{ bike.bike_model }}</a></h2>
             <p class="article-content">{{ bike.content }}</p>
+            <img src="{{ bike.bike_img.url }}" alt="{{ bike.bike_model }}" width="500">  <!-- must add .url after image -->
         </div>
         </article>
     {% endfor %}
