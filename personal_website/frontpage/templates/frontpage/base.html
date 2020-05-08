@@ -6,10 +6,19 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Always force latest IE rendering engine & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us">
+    <meta name="description" content="Ira Horecka's personal website.">
+    <meta name="keywords" content="ira, horecka, software, developer, programmer, python, biochemist, scientist">
+    <meta name="author" content="www.irahorecka.com">
+    <meta http-equiv="cleartype" content="on">
+    <!-- Responsive and mobile friendly stuff -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <link rel="stylesheet" type="text/css" href="{% static 'frontpage/main.css' %}">
 
     {% if title %}
@@ -33,8 +42,22 @@
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="https://github.com/irahorecka" target="_blank">GitHub</a>  <!-- open link in new tab -->
-                <a class="nav-item nav-link" href="https://www.linkedin.com/in/ira-horecka-3a8877128/" target="_blank">LinkedIn</a>
+                <a class="nav-item nav-link" href="https://github.com/irahorecka" target="_blank">
+                    <img src="https://avatars2.githubusercontent.com/u/48743671?s=460&u=db379598ae69fb7ffa845207d45817ebef0b1dcb&v=4" 
+                        class="img-fluid rounded-circle float-left mr-2"
+                        alt="GitHub Avatar"
+                        style="border:1px solid black"
+                        width="24">
+                    GitHub
+                </a>  <!-- open link in new tab -->
+                <a class="nav-item nav-link" href="https://www.linkedin.com/in/ira-horecka-3a8877128/" target="_blank">
+                <img src="https://media-exp1.licdn.com/dms/image/C5603AQHiVbc_m89DJg/profile-displayphoto-shrink_200_200/0?e=1594252800&v=beta&t=ceOOz3MASVJ9P_aEaG_b05tdMQR1TgJz1-4jE8adayM" 
+                        class="img-fluid rounded-circle float-left mr-2"
+                        alt="LinkedIn Avatar"
+                        style="border:1px solid black"
+                        width="24">
+                LinkedIn
+                </a>
             </div>
         </div>
         </div>
@@ -43,7 +66,7 @@
 
     <main role="main" class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
         {% block content %}{% endblock %}
         </div>
     </div>

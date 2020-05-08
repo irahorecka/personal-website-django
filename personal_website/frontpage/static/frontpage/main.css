@@ -7,11 +7,52 @@ body {
   h1, h2, h3, h4, h5, h6 {
     color: #444444;
   }
+
+  p {
+    margin-bottom: 0;
+  }
   
   ul {
     margin: 0;
   }
-  
+
+  dt, dd {
+    margin: 1px 0px;
+  }
+
+  dt {
+    float: left;
+    text-align: left;
+  }
+
+  .list-item {
+    margin-left: 5%;
+    width: 45%;
+  }
+
+  .header-panel {
+    margin-bottom: 25px;
+  }
+
+  .column-panel {
+    margin-bottom: 20px;
+  }
+
+  .text-resume-position {
+    font-size: 85%;
+    font-weight: 300;
+    text-decoration: underline;
+  }
+
+  .text-resume-body {
+    font-size: 85%;
+  }
+
+  .text-resume-date {
+    font-size: 75%;
+    font-weight: 300;
+  }
+
   .bg-steel {
     background-color: #be8743;
   }
@@ -82,3 +123,38 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+
+  .btn:hover{
+    background-color: #b84a17;
+    border-color: #b84a17;
+  }
+
+  .btn-info {
+    background-color: #b84a17;
+    border-bottom-color: #b84a17;
+    border-top-color: #b84a17;
+    border-left-color: #b84a17;
+    border-right-color: #b84a17;
+  }
+  .btn.btn-success {
+    color: #b84a17;
+    background-color:  #ffffff;
+    border-color: #b84a17;
+  }
+  .btn.btn-success:hover{
+    color: #ffffff;
+    background-color:  #b84a17;
+    border-color: #b84a17;
+  }
+  .btn.btn-success:active:focus,
+  .btn.btn-success:active:hover {
+    color: #ffffff;
+    background-color: #b84a17;
+    border-color: #b84a17;
+  }
+
+  .btn-outline-info {
+    color: #b84a17;
+    border-color: #b84a17;
+  }
+
