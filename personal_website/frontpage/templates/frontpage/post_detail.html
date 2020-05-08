@@ -1,0 +1,14 @@
+{% extends "frontpage/base.html" %}
+{% block content %}
+    <article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="{{ object.bike_make_url }}" target="_blank">{{ object.bike_make }}</a>
+            <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small> <!-- look at docs for date formatting -->
+        </div>
+        <h2 class="article-title">{{ object.bike_model }}</h2>
+        <p class="article-content">{{ object.content }}</p>
+        <img src="{{ object.bike_img.url }}" alt="{{ object.bike_model }}" width="500">  <!-- must add .url after image -->
+    </div>
+    </article>
+{% endblock content %}

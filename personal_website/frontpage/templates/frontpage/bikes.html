@@ -6,11 +6,35 @@
         <div class="media-body">
             <div class="article-metadata">
                 <a class="mr-2" href="{{ bike.bike_make_url }}" target="_blank">{{ bike.bike_make }}</a>
+                <small class="text-muted">{{ bike.date_posted|date:"F d, Y" }}</small> <!-- look at docs for date formatting -->
             </div>
-            <h2><a class="article-title" href="#">{{ bike.bike_model }}</a></h2>
+            <h2><a class="article-title" href="{% url 'post-detail' bike.id%}">{{ bike.bike_model }}</a></h2>
             <p class="article-content">{{ bike.content }}</p>
             <img src="{{ bike.bike_img.url }}" alt="{{ bike.bike_model }}" width="500">  <!-- must add .url after image -->
         </div>
         </article>
     {% endfor %}
+    {% if is_paginated %}
+    
+        {% if page_obj.has_previous %}  <!-- page object our view passed into our template -->
+            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>  <!-- route to first page - link -->
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>  <!-- route to previous page - link -->
+        {% endif %}
+
+        <!-- add features that will allow nearby next and prev pages to also show up -->
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}  <!-- check if the page number is current page -->
+                <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}  <!-- if the number we're on is within 3 previous and forward pages -->
+                <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        <!-- if next page exists, allow user to jump to next pages and the last page -->
+        {% if page_obj.has_next %}  <!-- page object our view passed into our template -->
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>  <!-- route to next page - link -->
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>  <!-- route to last page number -->
+        {% endif %}
+
+    {% endif %}
 {% endblock content %}
