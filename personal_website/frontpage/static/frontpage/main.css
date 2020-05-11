@@ -9,7 +9,7 @@ body {
   }
 
   p {
-    margin-bottom: 0;
+    margin-bottom: 0px;
   }
   
   ul {
@@ -25,6 +25,18 @@ body {
     text-align: left;
   }
 
+  .bike-header-margin {
+    margin-top: 110px;
+  }
+
+  .resume-header-margin {
+    margin-top: 50px;
+  }
+
+  .profile_img_margin {
+    margin-left: 60px;
+  }
+
   .list-item {
     margin-left: 5%;
     width: 45%;
@@ -36,6 +48,10 @@ body {
 
   .column-panel {
     margin-bottom: 20px;
+  }
+
+  .column-panel-skills {
+    margin-bottom: 0px;
   }
 
   .text-resume-position {

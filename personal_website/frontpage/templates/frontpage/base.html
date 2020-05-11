@@ -22,16 +22,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'frontpage/main.css' %}">
 
     {% if title %}
-        <title>Ira's Website - {{ title }}</title> 
+        <title>Ira Horecka - {{ title }}</title> 
     {% else %}
-        <title>Ira's Website</title>
+        <title>Ira Horecka</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-        <a class="navbar-brand mr-4" href="{% url 'frontpage-home' %}">Ira's Website</a>
+        {% comment %} <a class="navbar-brand mr-4" href="{% url 'frontpage-home' %}">Ira</a> {% endcomment %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,6 +39,7 @@
             <div class="navbar-nav mr-auto">
                 <a class="nav-item nav-link" href="{% url 'frontpage-home' %}">Home</a>
                 <a class="nav-item nav-link" href="{% url 'frontpage-bikes' %}">Bikes</a>
+                <a class="nav-item nav-link" href="{% url 'frontpage-resume' %}">Résumé</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
@@ -67,6 +68,11 @@
     <main role="main" class="container">
     <div class="row">
         <div class="col-md-12">
+        <img src="https://i.imgur.com/grrTuZh.jpg" 
+        class="img-fluid rounded-circle float-right profile_img_margin"
+        alt="YouTube to Audio"
+        style="border:2px solid black"
+        width="120">
         {% block content %}{% endblock %}
         </div>
     </div>

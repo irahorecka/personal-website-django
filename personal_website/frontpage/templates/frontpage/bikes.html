@@ -1,17 +1,22 @@
 {% extends "frontpage/base.html" %}
 {% block content %}
-    <h1>Bike Gallery</h1><br>
+    <h1>Bike Gallery</h1>
+    <p class="bike-header-margin"></p>
     {% for bike in bikes %}
         <article class="media content-section">
-        <div class="media-body">
-            <div class="article-metadata">
-                <a class="mr-2" href="{{ bike.bike_make_url }}" target="_blank">{{ bike.bike_make }}</a>
-                <small class="text-muted">{{ bike.date_posted|date:"F d, Y" }}</small> <!-- look at docs for date formatting -->
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="{{ bike.bike_make_url }}" target="_blank">{{ bike.bike_make }}</a>
+                    <small class="text-muted">{{ bike.date_posted|date:"F d, Y" }}</small> <!-- look at docs for date formatting -->
+                </div>
+                <h2><a class="article-title" href="{% url 'post-detail' bike.id%}">{{ bike.bike_model }}</a></h2>
+                <p class="article-content">{{ bike.content }}</p>
+                <p align="center">
+                <img src="{{ bike.bike_img.url }}"
+                alt="{{ bike.bike_model }}"
+                height="400">  <!-- must add .url after image -->
+                </p>
             </div>
-            <h2><a class="article-title" href="{% url 'post-detail' bike.id%}">{{ bike.bike_model }}</a></h2>
-            <p class="article-content">{{ bike.content }}</p>
-            <img src="{{ bike.bike_img.url }}" alt="{{ bike.bike_model }}" width="500">  <!-- must add .url after image -->
-        </div>
         </article>
     {% endfor %}
     {% if is_paginated %}

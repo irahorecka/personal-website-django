@@ -1,0 +1,37 @@
+{% extends "frontpage/base.html" %}
+{% block content %}
+    <h1>Ira Horecka</h1>
+    <h7>ira89@icloud.com</h7>
+    <br>
+    <h7>(510) 449-2801</h7>
+    <p class="resume-header-margin"></p>
+    <dl class="row">
+    {% for item in cv %}
+    <dt class="col-sm-4 header-panel"><h3>{{item.title}}</h3></dt>
+        {% for experience in item.experience_content %}
+            <dd class="col-sm-12 list-item">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        <p>{{ experience.institution }}</p>
+                        <p class="text-resume-position">{{ experience.position }}</p>
+                        <p class="text-resume-date">{{ experience.date }}</p>
+                    </dt>
+                    {% if item.title != 'Skills' %}
+                        <ul class="col-sm-7 column-panel list-group row">
+                    {% else %}
+                        <ul class="col-sm-7 column-panel-skills list-group row">
+                    {% endif %}
+                    {% for accomplishments in experience.body%}
+                        {% if item.title != 'Publications' %}
+                            <li class="item text-resume-body">{{ accomplishments }}</li>
+                        {% else %}
+                            <p class="item text-resume-body">{{ accomplishments }}</p>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </dl>
+            </dd>
+        {% endfor %}
+    {% endfor %}
+    </dl>
+{% endblock content %}

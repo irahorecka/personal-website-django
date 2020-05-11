@@ -22,7 +22,4 @@ from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('frontpage.urls'))
-]
-
-if settings.DEBUG: # new
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
